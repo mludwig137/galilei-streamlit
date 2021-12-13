@@ -20,8 +20,8 @@ word2id = LdaModel.load("./models/first_model.model.id2word")
 
 text = pd.read_csv("./data/abstract_lemmatized_processed_text.csv")
 
-gensim_tokens = [simple_preprocess(x, deacc=True) for x in text["abstract_lemmatized_processed_text"]]
-corpus = [word2id.doc2bow(x) for x in gensim_tokens]
+abstract_tokens = [simple_preprocess(x, deacc=True) for x in text["abstract_lemmatized_processed_text"]]
+corpus = [word2id.doc2bow(x) for x in abstract_tokens]
 
 
 topics = pyLDAvis.gensim_models.prepare(lda, corpus, word2id, mds="mmds", R=20)
@@ -44,8 +44,6 @@ if page == "Topic Models":
     html_string = pyLDAvis.prepared_data_to_html(topics)
     st.components.v1.html(html_string, width=1300, height=800, scrolling=True)
 
-    # st.write()
-    # pyLDAvis.show(topics)
 
 if page == "Attention is All You Need":
     st.write("Under Construction")
