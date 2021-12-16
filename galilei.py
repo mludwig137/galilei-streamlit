@@ -66,7 +66,7 @@ if page == "Topic Model Unigram":
     cols[1].write("Topic 2: Quantum Grab bag 2")
     cols[2].write("Topic 3: Astrophysics")
     cols[3].write("Topic 4: CS")
-    cols[4].write("Topic 5: Condensed Matter Physics(Topological)")
+    cols[4].write("Topic 5: Condensed Matter(Top.)")
 
     cols2 = st.columns(5)
     cols2[0].write("Topic 6: Photonics")
